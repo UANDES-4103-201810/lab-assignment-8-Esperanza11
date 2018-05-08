@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete '/users/:id/', to: 'users#destroy'
   get '/products/:id/', to: 'products#show'
   get '/products/', to: 'products#index'
+  get '/users/:id/products/', to: 'products#persona'
   post '/products/create/', to: 'products#create'
   put '/products/:id/', to: 'products#update'
   delete '/products/:id/', to: 'products#destroy'
