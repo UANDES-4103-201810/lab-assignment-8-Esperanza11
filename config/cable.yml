@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: Lab_8_production
+  channel_prefix: lab-assignment-8-Esperanza11_production
