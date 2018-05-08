@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   post '/users/create/', to: 'users#create'
   put '/users/:id/', to: 'users#update'
   delete '/users/:id/', to: 'users#destroy'
+  get '/products/:id/', to: 'products#show'
+  get '/products/', to: 'products#index'
+  post '/products/create/', to: 'products#create'
+  put '/products/:id/', to: 'products#update'
+  delete '/products/:id/', to: 'products#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
