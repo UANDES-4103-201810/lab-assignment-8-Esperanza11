@@ -12,6 +12,12 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def persona
+    @user = User.find(params[:id])
+    @productos = Product.where(user: @user)
+  end
+
+
   # GET /products/new
   def new
     @product = Product.new
