@@ -4,42 +4,33 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if @user.isadmin
-      render(:layout => "layouts/admin")
-    end
     @users = User.all
+    render(:layout => "layouts/admin")
+
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    if @user.isadmin
       render(:layout => "layouts/admin")
-    end
   end
 
   # GET /users/new
   def new
-    if @user.isadmin
       render(:layout => "layouts/admin")
-    end
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
-    if @user.isadmin
       render(:layout => "layouts/admin")
-    end
   end
 
   # POST /users
   # POST /users.json
   def create
-    if @user.isadmin
-      render(:layout => "layouts/admin")
-    end
     @user = User.new(user_params)
+    render(:layout => "layouts/admin")
 
     respond_to do |format|
       if @user.save
@@ -55,9 +46,6 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    if @user.isadmin
-      render(:layout => "layouts/admin")
-    end
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -66,20 +54,19 @@ class UsersController < ApplicationController
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+      render(:layout => "layouts/admin")
     end
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if @user.isadmin
-      render(:layout => "layouts/admin")
-    end
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+    render(:layout => "layouts/admin")
   end
 
   private

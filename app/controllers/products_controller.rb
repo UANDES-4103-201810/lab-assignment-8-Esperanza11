@@ -5,26 +5,31 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    render(:layout => "layouts/admin")
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    render(:layout => "layouts/admin")
   end
 
   def persona
     @user = User.find(params[:id])
     @productos = Product.where(user: @user)
+    render(:layout => "layouts/admin")
   end
 
 
   # GET /products/new
   def new
     @product = Product.new
+    render(:layout => "layouts/admin")
   end
 
   # GET /products/1/edit
   def edit
+    render(:layout => "layouts/admin")
   end
 
   # POST /products
@@ -41,6 +46,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+    render(:layout => "layouts/admin")
   end
 
   # PATCH/PUT /products/1
@@ -55,6 +61,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+    render(:layout => "layouts/admin")
   end
 
   # DELETE /products/1
@@ -65,6 +72,7 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+    render(:layout => "layouts/admin")
   end
 
   private
