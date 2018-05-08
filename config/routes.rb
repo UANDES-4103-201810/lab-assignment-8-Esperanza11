@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :products
   resources :users
+  root :to => "users#index"
   get '/users/:id/', to: 'users#show'
   get '/users/', to: 'users#index'
   post '/users/create/', to: 'users#create'
