@@ -13,8 +13,20 @@
   <body>
   <DIV class="container-fluid">
     <div class="colspan-2 db-sidebar">
-      <button class="btn btn-primary">Users</button>
-      <button class="btn btn-primary">Products</button>
+      <table>
+        <tr>
+          <td>
+            <form action="/users">
+              <input class="btn btn-primary" type="submit" value="Users">
+            </form>
+          </td>
+          <td>
+            <form action="/products">
+              <input class="btn btn-primary" type="submit" value="Products">
+            </form>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class="colspan-8">
       <%= yield %>
